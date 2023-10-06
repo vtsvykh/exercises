@@ -9,9 +9,9 @@ for line in file:
 
 strings = s.split()
 
-for i in range(len(strings)):
-    if i == num_line_file - 1:
-        result = strings[i]
+for index in range(len(strings)):
+    if index == num_line_file - 1:
+        result = strings[index]
         break
     else:
         result = 'Строки под таким номером нет! Попробуйте еще раз.'
