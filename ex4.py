@@ -14,6 +14,6 @@ for i in range(len(strings)):
         result = strings[i]
         break
     else:
-        result = 'Ошибка'
+        result = 'Строки под таким номером нет! Попробуйте еще раз.'
 
-print(f'Строка под номером {num_line_file} имеет вид: {result}')
+print(result)
