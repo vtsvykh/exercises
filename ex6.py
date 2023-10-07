@@ -5,6 +5,7 @@ while True:
         name_file = input('Введите имя файла (Например: myfamily.txt): ')
         file = open(name_file, 'r')
         num_line_file = int(input('Введите номер строки из выбранного файла (целое число): '))
+
         break
 
     except FileNotFoundError:
