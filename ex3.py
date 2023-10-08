@@ -1,5 +1,5 @@
 inp_file = open('input.txt', 'r')
-out_file = open('output.txt', 'w')
+out_file = open('simple/output.txt', 'w')
 s = ''
 for line in inp_file:
     s += line

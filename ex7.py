@@ -15,5 +15,5 @@ except ValueError:
 except ZeroDivisionError:
     result = 'Dont devide by zero'
 
-out_data = open('output.txt', 'w')
+out_data = open('simple/output.txt', 'w')
 out_data.write(result)
