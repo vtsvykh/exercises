@@ -4,8 +4,8 @@ num_line_file = input('Введите номер строки из выбран�
 result = ''
 
 try:
-    file = open(name_file, 'r')
-    strings = file.readlines()
+    with open(name_file, 'r') as file:
+        strings = file.readlines()
 
     for index in range(len(strings)):
         if index == int(num_line_file) - 1:
