@@ -1,11 +1,10 @@
-inp_file = open('input.txt', 'r')
-out_file = open('simple/output.txt', 'w')
-s = ''
-for line in inp_file:
-    s += line
+with open('input.txt', 'r') as inp_file:
 
-string = s.split()
+    with open('output.txt', 'w') as out_file:
 
-for line in string:
-    if line[-1]:
-        out_file.write(line[-1])
+        strings = inp_file.readlines()
+
+        for line in strings:
+            if line.strip('\n'):
+                out_file.write(line.strip('\n')[-1])
+
