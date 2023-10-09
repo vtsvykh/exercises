@@ -1,8 +1,7 @@
-data = open('input.txt', 'r')
-number = data.readlines()
-data = open('input.txt', 'w').close()
+with open('input.txt', 'r') as data:
+    strings = data.readlines()
 
-for line in number:
-    if line.strip('\n') != '100':
-        new = open('input.txt', 'a')
-        new.write(line)
+with open('input.txt', 'w') as data:
+    for line in strings:
+        if line.strip('\n') != '100':
+            data.write(line)
