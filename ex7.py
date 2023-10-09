@@ -1,19 +1,27 @@
+num = ''
 result = ''
-data = open('input.txt', 'r')
-
 try:
-    string = data.readline().split()
+    with open('input.txt', 'r', encoding='utf_8') as data:
+        numbers = data.read().split()
 
-    num_1 = int(string[0])
-    num_2 = int(string[1])
-    num_3 = int(string[2])
+        for element in range(len(numbers)):
+            if numbers[element].isdigit():
+                num += numbers[element]
+                num += ' '
 
-    result = num_1 / num_2 + num_3
+    num = num.split()[:3]
+    data_1 = int(num[0])
+    data_2 = int(num[1])
+    data_3 = int(num[2])
+
+    result = data_1 / data_2 + data_3
+
 
 except ValueError:
-    result = 'Uncorrect'
-except ZeroDivisionError:
-    result = 'Dont devide by zero'
+    result = 'Недопустимое значение!'
 
-out_data = open('simple/output.txt', 'w')
-out_data.write(result)
+except ZeroDivisionError:
+    result = 'На ноль делить нельзя!'
+
+with open('output.txt', 'w', encoding='utf_8') as out_file:
+    out_file.write(str(round(result, 2)))
