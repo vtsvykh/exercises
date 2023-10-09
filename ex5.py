@@ -4,9 +4,9 @@ while True:
 
     try:
         name_file = input('Введите имя файла (Например: myfamily.txt): ')
-        file = open(name_file, 'r')
-        num_line_file = input('Введите номер строки из выбранного файла (целое число): ')
-        strings = file.readlines()
+        with open(name_file, 'r') as file:
+            num_line_file = input('Введите номер строки из выбранного файла (целое число): ')
+            strings = file.readlines()
 
         for index in range(len(strings)):
             if 0 >= int(num_line_file) or int(num_line_file) > len(strings):
@@ -15,8 +15,9 @@ while True:
             else:
                 if index == int(num_line_file) - 1:
                     result = strings[index]
-                    break
+
         break
+
     except FileNotFoundError:
         print('Файл не найден. Попробуйте еще раз.')
 
@@ -24,4 +25,4 @@ while True:
         print('Некорректно задан номер строки. Попробуйте еще раз.')
         break
 
-    print(result)
+print(result)
